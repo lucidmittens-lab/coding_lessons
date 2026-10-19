@@ -1,0 +1,49 @@
+# Tests for Lesson 0. You do not need to understand this file yet.
+# Run it from the top folder of the repository:
+#     python lessons/00-your-workspace/test_exercise.py
+
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).parent
+REPO = HERE.parent.parent
+
+
+def run(path):
+    result = subprocess.run(
+        [sys.executable, str(path)], capture_output=True, text=True
+    )
+    return result.stdout.strip(), result.stderr.strip()
+
+
+def test_exercise_prints_hello_world():
+    output, errors = run(HERE / "exercise.py")
+    assert not errors, f"exercise.py crashed with this error:\n{errors}"
+    assert output == "Hello, world!", (
+        f"Expected exercise.py to print: Hello, world!\n"
+        f"It printed: {output!r}"
+    )
+
+
+def test_capstone_prints_pocket_ledger():
+    main = REPO / "pocket_ledger" / "main.py"
+    assert main.exists(), "pocket_ledger/main.py does not exist yet"
+    output, errors = run(main)
+    assert not errors, f"pocket_ledger/main.py crashed with this error:\n{errors}"
+    assert output == "Pocket Ledger", (
+        f"Expected pocket_ledger/main.py to print: Pocket Ledger\n"
+        f"It printed: {output!r}"
+    )
+
+
+if __name__ == "__main__":
+    failed = 0
+    for test in (test_exercise_prints_hello_world, test_capstone_prints_pocket_ledger):
+        try:
+            test()
+            print(f"PASS  {test.__name__}")
+        except AssertionError as problem:
+            failed += 1
+            print(f"FAIL  {test.__name__}\n      {problem}")
+    print("All tests passed" if not failed else f"{failed} test(s) failed")
