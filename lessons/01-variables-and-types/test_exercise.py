@@ -13,7 +13,14 @@ REPO = HERE.parent.parent
 
 def run_code(code, filename):
     """Run some code, returning (its variables, what it printed)."""
-    variables = {"__name__": "__main__"}
+    # Later lessons make Pocket Ledger ask questions, so the tests answer
+    # them instead of waiting for you: "1" three times, then "done".
+    answers = ["1"] * 3
+
+    def fake_input(prompt=""):
+        return answers.pop(0) if answers else "done"
+
+    variables = {"__name__": "__main__", "input": fake_input}
     printed = io.StringIO()
     with contextlib.redirect_stdout(printed):
         exec(compile(code, filename, "exec"), variables)
