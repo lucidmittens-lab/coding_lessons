@@ -1,6 +1,6 @@
 # Tests for Lesson 2. You do not need to understand this file yet.
 # Run it from the top folder of the repository:
-#     python3 lessons/02-strings-and-input/test_exercise.py
+#     python3 lessons/02-strings-and-input/test_lesson_02.py
 
 import contextlib
 import io
@@ -38,17 +38,17 @@ EXERCISE_ANSWERS = {"Bill": "40", "Tip": "15"}
 
 
 def run_exercise(raw_name=None, answers=EXERCISE_ANSWERS):
-    path = HERE / "exercise.py"
+    path = HERE / "lesson_02.py"
     code = path.read_text()
     if raw_name is not None:
         assert re.search(r"^raw_name\s*=", code, re.MULTILINE), (
-            "Could not find the line 'raw_name = ...' in exercise.py. Please put it back."
+            "Could not find the line 'raw_name = ...' in lesson_02.py. Please put it back."
         )
         code = re.sub(r"^raw_name\s*=.*$", f"raw_name = {raw_name!r}", code, flags=re.MULTILINE)
     return run_code(code, str(path), answers)
 
 
-def check_variable(variables, name, expected, where="exercise.py"):
+def check_variable(variables, name, expected, where="lesson_02.py"):
     assert name in variables, f"There is no variable called {name} in {where}"
     assert variables[name] == expected, (
         f"Expected {name} to be {expected!r}, but it is {variables[name]!r}"

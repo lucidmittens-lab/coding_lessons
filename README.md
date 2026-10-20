@@ -9,11 +9,11 @@ A step-by-step course in Python and software engineering, from first principles 
 ## How each lesson works
 
 1. Read the lesson's `README.md`.
-2. Fill in `exercise.py`.
+2. Fill in the lesson's exercise file, `lesson_NN.py` (for example `lesson_00.py`).
 3. Check your work by running the tests from the top of the repository:
 
    ```
-   python lessons/00-your-workspace/test_exercise.py
+   python lessons/00-your-workspace/test_lesson_00.py
    ```
 
    (Use `python3` instead of `python` if that is what your computer has.)

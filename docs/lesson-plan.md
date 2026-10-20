@@ -24,7 +24,7 @@ Why this project: it is small enough to understand completely, but it naturally 
 
 ## How a lesson works
 
-- Each lesson lives in the repository as `lessons/NN-name/` with a short `README.md` (the concept), an `exercise.py` to fill in, and `test_exercise.py` that tells you when you are done.
+- Each lesson lives in the repository as `lessons/NN-name/` with a short `README.md` (the concept), a `lesson_NN.py` exercise to fill in, and `test_lesson_NN.py` that tells you when you are done.
 - The capstone lives in `pocket_ledger/` and grows by one step per lesson. Each capstone step is one commit (later, one pull request).
 - From lesson 7 onward, you open a pull request for each capstone step and I review it, the way a teammate would.
 
@@ -39,8 +39,8 @@ coding-lessons/
 ├── lessons/
 │   ├── 01-variables-and-types/
 │   │   ├── README.md
-│   │   ├── exercise.py
-│   │   └── test_exercise.py
+│   │   ├── lesson_01.py
+│   │   └── test_lesson_01.py
 │   └── ...
 ├── pocket_ledger/        # the capstone, grows each lesson
 ├── tests/                # capstone tests

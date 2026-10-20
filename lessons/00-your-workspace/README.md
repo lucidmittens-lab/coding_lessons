@@ -47,7 +47,7 @@ The last line opens the folder in VS Code. (If `code` is not found, open VS Code
 
 ## Step 3: The exercise
 
-Open `lessons/00-your-workspace/exercise.py`. It is almost empty. Write **one line** in it that prints exactly:
+Open `lessons/00-your-workspace/lesson_00.py`. It is almost empty. Write **one line** in it that prints exactly:
 
 ```
 Hello, world!
@@ -58,7 +58,7 @@ Hint: Python's `print` takes the text you want to show, inside brackets and quot
 Run it from the terminal, from the top folder of the repository:
 
 ```
-python lessons/00-your-workspace/exercise.py
+python lessons/00-your-workspace/lesson_00.py
 ```
 
 Then try running it with the **▶ Run** button in the top right corner of VS Code. Both do the same thing.
@@ -68,7 +68,7 @@ Then try running it with the **▶ Run** button in the top right corner of VS Co
 Run the tests:
 
 ```
-python lessons/00-your-workspace/test_exercise.py
+python lessons/00-your-workspace/test_lesson_00.py
 ```
 
 If it says `All tests passed`, you are done with the exercise. If not, read what it says it expected, change your code and try again.
@@ -91,10 +91,10 @@ From the top folder of the repository:
 git status
 ```
 
-This lists files that changed. You should see `exercise.py` and `pocket_ledger/main.py`.
+This lists files that changed. You should see `lesson_00.py` and `pocket_ledger/main.py`.
 
 ```
-git add lessons/00-your-workspace/exercise.py pocket_ledger/main.py
+git add lessons/00-your-workspace/lesson_00.py pocket_ledger/main.py
 git commit -m "Lesson 0: hello world and the start of Pocket Ledger"
 git push
 ```
@@ -105,6 +105,6 @@ If any of these steps go wrong, paste the whole message you got into the project
 
 ## Done when
 
-- `python lessons/00-your-workspace/test_exercise.py` prints `All tests passed`.
+- `python lessons/00-your-workspace/test_lesson_00.py` prints `All tests passed`.
 - `python pocket_ledger/main.py` prints `Pocket Ledger`.
 - Your commit shows up on GitHub.
