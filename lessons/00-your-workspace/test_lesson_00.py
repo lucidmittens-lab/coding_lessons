@@ -1,6 +1,6 @@
 # Tests for Lesson 0. You do not need to understand this file yet.
 # Run it from the top folder of the repository:
-#     python lessons/00-your-workspace/test_exercise.py
+#     python lessons/00-your-workspace/test_lesson_00.py
 
 import subprocess
 import sys
@@ -23,10 +23,10 @@ def run(path):
 
 
 def test_exercise_prints_hello_world():
-    output, errors = run(HERE / "exercise.py")
-    assert not errors, f"exercise.py crashed with this error:\n{errors}"
+    output, errors = run(HERE / "lesson_00.py")
+    assert not errors, f"lesson_00.py crashed with this error:\n{errors}"
     assert output == "Hello, world!", (
-        f"Expected exercise.py to print: Hello, world!\n"
+        f"Expected lesson_00.py to print: Hello, world!\n"
         f"It printed: {output!r}"
     )
 

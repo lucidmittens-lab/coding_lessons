@@ -68,7 +68,7 @@ print(name, "is", age)    # Tom is 40
 
 ## The exercise
 
-Open `exercise.py`. It has two parts.
+Open `lesson_01.py`. It has two parts.
 
 **Part 1: Types.** Create four variables:
 - `year`, an `int`
@@ -89,12 +89,12 @@ Your code must **work out** the answers from `celsius`, not type them in. The te
 
 Run it:
 ```
-python3 lessons/01-variables-and-types/exercise.py
+python3 lessons/01-variables-and-types/lesson_01.py
 ```
 
 Check it:
 ```
-python3 lessons/01-variables-and-types/test_exercise.py
+python3 lessons/01-variables-and-types/test_lesson_01.py
 ```
 
 ## Capstone step
@@ -117,13 +117,13 @@ The Lesson 1 tests check this too. Make sure Lesson 0's tests still pass as well
 When both lessons' tests pass:
 
 ```
-git add lessons/01-variables-and-types/exercise.py pocket_ledger/main.py
+git add lessons/01-variables-and-types/lesson_01.py pocket_ledger/main.py
 git commit -m "Lesson 1: variables, types and a first total"
 git push
 ```
 
 ## Done when
 
-- `python3 lessons/01-variables-and-types/test_exercise.py` prints `All tests passed`.
-- `python3 lessons/00-your-workspace/test_exercise.py` still prints `All tests passed`.
+- `python3 lessons/01-variables-and-types/test_lesson_01.py` prints `All tests passed`.
+- `python3 lessons/00-your-workspace/test_lesson_00.py` still prints `All tests passed`.
 - Your commit is on GitHub.

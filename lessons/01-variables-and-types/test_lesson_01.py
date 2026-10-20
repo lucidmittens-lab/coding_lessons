@@ -1,6 +1,6 @@
 # Tests for Lesson 1. You do not need to understand this file yet.
 # Run it from the top folder of the repository:
-#     python3 lessons/01-variables-and-types/test_exercise.py
+#     python3 lessons/01-variables-and-types/test_lesson_01.py
 
 import contextlib
 import io
@@ -28,18 +28,18 @@ def run_code(code, filename):
 
 
 def run_exercise(celsius=None):
-    path = HERE / "exercise.py"
+    path = HERE / "lesson_01.py"
     code = path.read_text()
     if celsius is not None:
         assert re.search(r"^celsius\s*=", code, re.MULTILINE), (
-            "Could not find the line 'celsius = 25' in exercise.py. Please put it back."
+            "Could not find the line 'celsius = 25' in lesson_01.py. Please put it back."
         )
         code = re.sub(r"^celsius\s*=.*$", f"celsius = {celsius}", code, flags=re.MULTILINE)
     return run_code(code, str(path))
 
 
 def check_type(variables, name, expected):
-    assert name in variables, f"There is no variable called {name} in exercise.py"
+    assert name in variables, f"There is no variable called {name} in lesson_01.py"
     actual = type(variables[name])
     assert actual is expected, (
         f"Expected {name} to be a {expected.__name__}, "
@@ -75,13 +75,13 @@ def test_part_2_temperature():
     for celsius, fahrenheit, kelvin in [(25, 77.0, 298.15), (100, 212.0, 373.15), (0, 32.0, 273.15)]:
         variables, lines = run_exercise(celsius)
         for name, expected in [("fahrenheit", fahrenheit), ("kelvin", kelvin)]:
-            assert name in variables, f"There is no variable called {name} in exercise.py"
+            assert name in variables, f"There is no variable called {name} in lesson_01.py"
             assert abs(variables[name] - expected) < 0.001, (
                 f"With celsius = {celsius}, expected {name} to be {expected}, "
                 f"but it is {variables[name]}"
             )
         assert len(lines) >= 2, (
-            f"Expected two printed lines, but exercise.py printed {len(lines)}"
+            f"Expected two printed lines, but lesson_01.py printed {len(lines)}"
         )
         check_line(lines[-2], celsius, "F", fahrenheit)
         check_line(lines[-1], celsius, "K", kelvin)

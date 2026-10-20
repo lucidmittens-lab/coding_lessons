@@ -81,7 +81,7 @@ If someone types `ten`, `float()` crashes with a `ValueError`. That's fine for n
 
 ## The exercise
 
-Open `exercise.py`. It has two parts.
+Open `lesson_02.py`. It has two parts.
 
 **Part 1: Tidying text.** The file sets `raw_name = "   tOM sMITH   "`. Below it, create:
 - `clean_name`: `raw_name` with the spaces removed from both ends and each word capitalised (`"Tom Smith"`).
@@ -106,12 +106,12 @@ Total: 46.00
 
 Run it:
 ```
-python3 lessons/02-strings-and-input/exercise.py
+python3 lessons/02-strings-and-input/lesson_02.py
 ```
 
 Check it:
 ```
-python3 lessons/02-strings-and-input/test_exercise.py
+python3 lessons/02-strings-and-input/test_lesson_02.py
 ```
 
 The tests answer the questions for you, so they won't stop and wait for your typing.
@@ -141,13 +141,13 @@ Added coffee: 4.50
 When this lesson's tests pass, and Lessons 0 and 1 still pass:
 
 ```
-git add lessons/02-strings-and-input/exercise.py pocket_ledger/main.py
+git add lessons/02-strings-and-input/lesson_02.py pocket_ledger/main.py
 git commit -m "Lesson 2: strings, input and adding an expense"
 git push
 ```
 
 ## Done when
 
-- `python3 lessons/02-strings-and-input/test_exercise.py` prints `All tests passed`.
+- `python3 lessons/02-strings-and-input/test_lesson_02.py` prints `All tests passed`.
 - Lessons 0 and 1 tests still print `All tests passed`.
 - Your commit is on GitHub.
