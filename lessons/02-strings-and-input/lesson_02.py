@@ -16,11 +16,11 @@ print (greeting)
 # Part 2: Tip calculator
 # Ask "Bill amount: " and "Tip percent: ", then print the tip and total.
 
-bill = float(input("How much is the bill?"))
-tip_percent = float(input("How much would you like to tip?"))
+bill = float(input("Bill amount?"))
+tip_percent = float(input("Tip percent?"))
 tip =((bill * tip_percent)/100)
 total = (bill + tip)
 print (f"Bill amount: {bill}")
 print (f"Tip percent: {tip_percent}")
-print (f"Tip:, {tip:.2f}")
+print (f"Tip: {tip:.2f}")
 print (f"Total: {total:.2f}")
