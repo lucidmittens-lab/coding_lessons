@@ -10,9 +10,14 @@ HERE = Path(__file__).parent
 REPO = HERE.parent.parent
 
 
+# Later lessons make Pocket Ledger ask questions, so the tests type
+# some answers in for it instead of waiting for you.
+ANSWERS = "1\n" * 3 + "done\n" * 50
+
+
 def run(path):
     result = subprocess.run(
-        [sys.executable, str(path)], capture_output=True, text=True
+        [sys.executable, str(path)], capture_output=True, text=True, input=ANSWERS
     )
     return result.stdout.strip(), result.stderr.strip()
 
