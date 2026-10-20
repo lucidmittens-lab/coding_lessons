@@ -7,3 +7,5 @@ This repository is Tom's Python course. Tom is a near beginner and writes the co
 - Only use concepts already taught. Check `docs/lesson-plan.md` for the order.
 - Test failure messages are written for a beginner: say what was expected and what happened.
 - Every earlier lesson's tests must keep passing as the capstone grows: capstone tests check only what their own lesson added.
+- Exercise file comments spell out every target value, so Tom never has to switch to the README to find what's asked.
+- When a test fails, its message says what the test typed in or changed, so sample inputs never look like they came from nowhere.
