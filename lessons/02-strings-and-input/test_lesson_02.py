@@ -85,6 +85,8 @@ def test_capstone_add_expense():
     ]:
         answers = {"Amount": typed_amount, "Description": typed_description}
         variables, lines = run_code(path.read_text(), str(path), answers)
+        # The test types in sample expenses. The second one has extra spaces
+        # on purpose, to check that description has them stripped off.
         assert "amount" in variables, "There is no variable called amount in pocket_ledger/main.py"
         assert type(variables["amount"]) in (int, float), (
             f"Expected amount to be a number, but it is a {type(variables['amount']).__name__}: "
@@ -94,10 +96,14 @@ def test_capstone_add_expense():
             f"When {typed_amount!r} was typed, expected amount to be {amount}, "
             f"but it is {variables['amount']!r}"
         )
-        check_variable(variables, "description", description, "pocket_ledger/main.py")
+        typed = f"When the test typed {typed_amount!r} for Amount and {typed_description!r} for Description"
+        assert "description" in variables, "There is no variable called description in pocket_ledger/main.py"
+        assert variables["description"] == description, (
+            f"{typed},\nexpected description to be {description!r}, but it is {variables['description']!r}"
+        )
         wanted = f"Added {description}: {amount:.2f}"
         assert wanted in lines, (
-            f"Expected a printed line saying: {wanted}\nPrinted lines were: {lines}"
+            f"{typed},\nexpected a printed line saying: {wanted}\nPrinted lines were: {lines}"
         )
 
 
