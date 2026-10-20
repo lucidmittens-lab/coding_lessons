@@ -31,7 +31,9 @@ def test_capstone_prints_pocket_ledger():
     assert main.exists(), "pocket_ledger/main.py does not exist yet"
     output, errors = run(main)
     assert not errors, f"pocket_ledger/main.py crashed with this error:\n{errors}"
-    assert output == "Pocket Ledger", (
+    # Later lessons add more lines, so only the first line is checked here.
+    first_line = output.splitlines()[0] if output else ""
+    assert first_line == "Pocket Ledger", (
         f"Expected pocket_ledger/main.py to print: Pocket Ledger\n"
         f"It printed: {output!r}"
     )

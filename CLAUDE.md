@@ -6,3 +6,4 @@ This repository is Tom's Python course. Tom is a near beginner and writes the co
 - Lessons live in `lessons/NN-name/` with `README.md`, `exercise.py` and `test_exercise.py`. Tests must run with plain `python path/to/test_exercise.py` until Lesson 12 introduces pytest, and should also work under pytest.
 - Only use concepts already taught. Check `docs/lesson-plan.md` for the order.
 - Test failure messages are written for a beginner: say what was expected and what happened.
+- Every earlier lesson's tests must keep passing as the capstone grows: capstone tests check only what their own lesson added.
